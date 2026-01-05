@@ -1,0 +1,15 @@
+.movie-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.rating-text {
+    font-size: 0.75rem;
+    color: var(--color-text-secondary);
+    margin-left: 0.25rem;
+}
+
+.movie-rating svg {
+    transition: all 0.2s ease;
+}

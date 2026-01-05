@@ -1,0 +1,91 @@
+.notification {
+    position: fixed;
+    top: 80px;
+    right: 20px;
+    z-index: 1000;
+    min-width: 300px;
+    max-width: 400px;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    animation: slideIn 0.3s ease-out;
+    backdrop-filter: blur(10px);
+}
+
+.notification-success {
+    background: rgba(34, 197, 94, 0.9);
+    border: 1px solid rgba(34, 197, 94, 0.3);
+    color: white;
+}
+
+.notification-info {
+    background: rgba(59, 130, 246, 0.9);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    color: white;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.notification-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.notification-message {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    color: inherit;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.notification-close:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Dark theme adjustments */
+[data-theme="dark"] .notification-success {
+    background: rgba(34, 197, 94, 0.95);
+}
+
+[data-theme="dark"] .notification-info {
+    background: rgba(59, 130, 246, 0.95);
+}
+
+/* Light theme adjustments */
+[data-theme="light"] .notification-success {
+    background: rgba(34, 197, 94, 0.95);
+    color: white;
+}
+
+[data-theme="light"] .notification-info {
+    background: rgba(59, 130, 246, 0.95);
+    color: white;
+}

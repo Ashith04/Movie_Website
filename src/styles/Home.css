@@ -1,0 +1,197 @@
+.home-page {
+    min-height: 100vh;
+    padding-bottom: 4rem;
+}
+
+.hero-section {
+    background: linear-gradient(to bottom, rgba(11, 11, 11, 0.4), var(--color-bg-deep)),
+        url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop') center/cover no-repeat;
+    padding: 6rem 0 3rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.5);
+    color: var(--color-text-primary);
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: var(--color-text-secondary);
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.section-title {
+    font-size: 2rem;
+    color: var(--color-text-primary);
+    margin: 2rem 0 1rem 0;
+    text-align: center;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.category-filters {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    color: #FFFFFF;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    backdrop-filter: blur(10px);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.filter-btn:hover {
+    background: rgba(0, 0, 0, 0.8);
+    color: #FFFFFF;
+    border-color: var(--color-accent-gold);
+    transform: translateY(-2px);
+}
+
+.filter-btn.active {
+    background: var(--color-accent-gold);
+    color: #000000;
+    border-color: var(--color-accent-gold);
+    box-shadow: 0 0 20px rgba(96, 165, 250, 0.4);
+    text-shadow: none;
+}
+
+.category-section {
+    margin: 3rem 0;
+}
+
+.category-title {
+    font-size: 1.8rem;
+    color: var(--color-text-primary);
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.movie-row {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding: 1rem 0;
+    scroll-behavior: smooth;
+}
+
+.movie-row::-webkit-scrollbar {
+    height: 8px;
+}
+
+.movie-row::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+.movie-row::-webkit-scrollbar-thumb {
+    background: var(--color-accent-gold);
+    border-radius: 4px;
+}
+
+.movie-row .movie-card {
+    min-width: 250px;
+    max-width: 250px;
+    flex-shrink: 0;
+    height: 420px;
+}
+
+.error-message {
+    text-align: center;
+    color: var(--color-action-crimson);
+    font-size: 1.2rem;
+    margin-top: 2rem;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-left-color: var(--color-accent-gold);
+    border-radius: 50%;
+    margin: 3rem auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.pagination-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.load-more-btn {
+    background-color: transparent;
+    border: 2px solid var(--color-accent-gold);
+    color: var(--color-accent-gold);
+    padding: 0.8rem 2.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.load-more-btn:hover {
+    background-color: var(--color-accent-gold);
+    color: var(--color-bg-deep);
+    box-shadow: 0 0 20px rgba(226, 182, 22, 0.4);
+    transform: translateY(-2px);
+}
+
+.language-indicator {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid var(--color-accent-gold);
+    color: var(--color-accent-gold);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 1rem;
+    }
+}

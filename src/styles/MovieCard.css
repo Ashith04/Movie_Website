@@ -1,0 +1,159 @@
+.movie-card {
+    background-color: var(--color-bg-surface);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-shadow: var(--shadow-card);
+    width: 100%;
+    max-width: 250px;
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-glow);
+}
+
+.movie-poster-container {
+    position: relative;
+    padding-top: 120%;
+    /* Reduced from 150% to leave more space for text */
+    overflow: hidden;
+}
+
+.movie-poster {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.movie-card:hover .movie-poster {
+    transform: scale(1.05);
+}
+
+.movie-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 1rem;
+    pointer-events: none;
+    gap: 0.5rem;
+}
+
+.movie-card:hover .movie-overlay {
+    opacity: 1;
+}
+
+.favorite-btn {
+    background-color: rgba(26, 26, 26, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(4px);
+}
+
+.favorite-btn:hover {
+    background-color: white;
+    color: var(--color-action-crimson);
+    transform: scale(1.1);
+}
+
+.favorite-btn.active {
+    color: var(--color-action-crimson);
+}
+
+.watch-later-btn {
+    background-color: rgba(26, 26, 26, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    pointer-events: auto;
+    transition: all 0.2s ease;
+    backdrop-filter: blur(4px);
+}
+
+.watch-later-btn:hover {
+    background-color: white;
+    color: var(--color-accent-gold);
+    transform: scale(1.1);
+}
+
+.watch-later-btn.active {
+    color: var(--color-accent-gold);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.movie-info {
+    padding: 1.2rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100px;
+    background-color: var(--color-bg-surface);
+}
+
+.movie-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.movie-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+}
+
+.progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: var(--color-accent-gold);
+    transition: width 0.3s ease;
+}

@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap');
+
+:root {
+  /* Cinematic Elegance Theme - Dark */
+  --color-bg-deep: url('https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=2070&auto=format&fit=crop') center/cover fixed, #0B0B0B;
+  --color-bg-surface: #1A1A1A;
+  --color-accent-gold: #E2B616;
+  --color-action-crimson: #D32F2F;
+  --color-text-primary: #F5F5F5;
+  --color-text-secondary: #B0B0B0;
+  
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  
+  --shadow-glow: 0 0 20px rgba(226, 182, 22, 0.15);
+  --shadow-card: 0 4px 6px rgba(0, 0, 0, 0.3);
+  
+  --transition-smooth: all 0.3s ease;
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --color-bg-deep: url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=2070&auto=format&fit=crop') center/cover fixed, linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --color-bg-surface: rgba(30, 41, 59, 0.4);
+  --color-accent-gold: #60A5FA;
+  --color-action-crimson: #F472B6;
+  --color-text-primary: #E2E8F0;
+  --color-text-secondary: #94A3B8;
+  --shadow-glow: 0 0 20px rgba(96, 165, 250, 0.3);
+  --shadow-card: 0 8px 32px rgba(30, 41, 59, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--color-bg-deep);
+  min-height: 100vh;
+}
+
+body {
+  background: transparent;
+  color: var(--color-text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-text-primary);
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-smooth);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-deep);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-bg-surface);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-accent-gold);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
