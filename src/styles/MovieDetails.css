@@ -229,3 +229,138 @@
         justify-content: center;
     }
 }
+
+/* Cast Section Styles */
+.cast-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cast-section h3 {
+    color: var(--color-text-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.cast-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1.5rem;
+    max-width: 100%;
+}
+
+.cast-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.cast-member:hover {
+    transform: translateY(-5px);
+}
+
+.cast-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 0.8rem;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.cast-member:hover .cast-image {
+    border-color: var(--color-accent-gold);
+    box-shadow: 0 0 15px rgba(226, 182, 22, 0.3);
+}
+
+.cast-name {
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.3;
+    max-width: 100px;
+    word-wrap: break-word;
+}
+
+/* Mobile Responsive for Cast */
+@media (max-width: 480px) {
+    .cast-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+    
+    .cast-image {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .cast-name {
+        font-size: 0.8rem;
+        max-width: 80px;
+    }
+}
+
+@media (max-width: 900px) {
+    .cast-section {
+        text-align: center;
+    }
+    
+    .cast-grid {
+        justify-items: center;
+    }
+}
+/* Trailer Section Styles */
+.trailer-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.trailer-section h3 {
+    color: var(--color-text-primary);
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.trailer-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.trailer-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+/* Mobile Responsive for Trailer */
+@media (max-width: 480px) {
+    .trailer-container {
+        padding-bottom: 60%; /* Slightly taller on mobile */
+        border-radius: 8px;
+    }
+    
+    .trailer-iframe {
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 900px) {
+    .trailer-section {
+        text-align: center;
+    }
+}

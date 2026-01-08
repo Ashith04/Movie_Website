@@ -4,6 +4,7 @@ import { ArrowLeft, Star, Clock, Calendar, Heart, Award, Plus } from 'lucide-rea
 import { getMovieDetails } from '../api/movieApi';
 import { useGlobalContext } from '../context/GlobalContext';
 import '../styles/MovieDetails.css';
+import '../styles/trailer.css';
 
 const MovieDetails = () => {
     // getting the movie id from the url
@@ -151,12 +152,51 @@ const MovieDetails = () => {
                                 <span className="value">{movie.Director}</span>
                             </div>
                             <div className="credit-item">
-                                <span className="label">Cast</span>
-                                <span className="value">{movie.Cast}</span>
-                            </div>
-                            <div className="credit-item">
                                 <span className="label">Awards</span>
                                 <span className="value"><Award size={16} className="award-icon" /> {movie.Awards}</span>
+                            </div>
+                        </div>
+
+                        {/* Cast section with images */}
+                        <div className="cast-section">
+                            <h3>Cast</h3>
+                            <div className="cast-grid">
+                                {movie.Actors && movie.Actors.split(', ').slice(0, 6).map((actor, index) => (
+                                    <div key={index} className="cast-member">
+                                        <img 
+                                            src={`https://i.pravatar.cc/150?u=${actor.replace(/\s+/g, '')}`}
+                                            alt={actor}
+                                            className="cast-image"
+                                        />
+                                        <span className="cast-name">{actor}</span>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+
+                        {/* Trailer section */}
+                        <div className="trailer-section">
+                            <h3>Trailer</h3>
+                            <div className="trailer-container">
+                                <div className="trailer-placeholder">
+                                    <div className="play-button">
+                                        <svg width="60" height="60" viewBox="0 0 24 24" fill="currentColor">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                    <div className="trailer-overlay">
+                                        <h4>Watch Trailer</h4>
+                                        <p>Click to search for {movie.Title} trailer on YouTube</p>
+                                    </div>
+                                </div>
+                                <a 
+                                    href={`https://www.youtube.com/results?search_query=${encodeURIComponent(movie.Title + ' ' + movie.Year + ' trailer')}`}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="trailer-link"
+                                >
+                                    Watch Trailer on YouTube
+                                </a>
                             </div>
                         </div>
                     </div>
